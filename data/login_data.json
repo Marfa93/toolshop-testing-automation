@@ -1,0 +1,112 @@
+[
+  {
+    "test_name": "Cas passant",
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "welcome01",
+    "validity": {
+      "valid": true,
+      "email_error": false,
+      "password_error": false,
+      "login_error": false
+    }
+  },
+  {
+    "test_name": "Empty email and password",
+    "email": "",
+    "password": "",
+    "validity": {
+      "valid": false,
+      "email_error": true,
+      "password_error": true,
+      "login_error": false
+    }
+  },
+  {
+    "test_name": "Invalid password",
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "password",
+    "validity": {
+      "valid": false,
+      "email_error": false,
+      "password_error": false,
+      "login_error": true
+    }
+  },
+  {
+    "test_name": "Email invalide (format incorrect)",
+    "email": "utilisateur",
+    "password": "MotDePasse123!",
+    "validity": {
+      "valid": false,
+      "email_error": true,
+      "password_error": false,
+      "login_error": false
+    }
+  },
+  {
+    "test_name": "Email vide",
+    "email": "",
+    "password": "MotDePasse123!",
+    "validity": {
+      "valid": false,
+      "email_error": true,
+      "password_error": false,
+      "login_error": false
+    }
+  },
+  {
+    "test_name": "Mot de passe trop court",
+    "email": "utilisateur@example.com",
+    "password": "12",
+    "validity": {
+      "valid": false,
+      "email_error": false,
+      "password_error": true,
+      "login_error": false
+    }
+  },
+  {
+    "test_name": "Mot de passe vide",
+    "email": "utilisateur@example.com",
+    "password": "",
+    "validity": {
+      "valid": false,
+      "email_error": false,
+      "password_error": true,
+      "login_error": false
+    }
+  },
+  {
+    "test_name": "Compte inexistant",
+    "email": "inconnu@domaine.com",
+    "password": "welcome01",
+    "validity": {
+      "valid": false,
+      "email_error": false,
+      "password_error": false,
+      "login_error": true
+    }
+  },
+  {
+    "test_name": "Email et mot de passe invalides",
+    "email": "pas-un-email",
+    "password": "a",
+    "validity": {
+      "valid": false,
+      "email_error": true,
+      "password_error": true,
+      "login_error": false
+    }
+  },
+  {
+    "test_name": "Tentative d'injection dans l'email",
+    "email": "' OR 1=1 --",
+    "password": "MotDePasse123!",
+    "validity": {
+      "valid": false,
+      "email_error": true,
+      "password_error": false,
+      "login_error": false
+    }
+  }
+]
