@@ -1,0 +1,33 @@
+[
+  {
+    "test_name": "Enregistrement valide - cas nominal France",
+    "first_name": "Jean",
+    "last_name": "Dupont",
+    "date_of_birth": "1990-05-15",
+    "country": "France",
+    "postal_code": "75001",
+    "house_number": "10",
+    "street": "Rue de Rivoli",
+    "city": "Paris",
+    "state": "Île-de-France",
+    "phone": "0612345678",
+    "email": "jean.dupont@example.com",
+    "password": "P@ssw0rd2026!",
+    "validity": {
+      "valid": true,
+      "first_name_error": false,
+      "last_name_error": false,
+      "dob_error": false,
+      "country_error": false,
+      "postal_code_error": false,
+      "house_number_error": false,
+      "street_error": false,
+      "city_error": false,
+      "state_error": false,
+      "phone_error": false,
+      "email_error": false,
+      "password_error": false,
+      "registration_error": false
+    }
+  }
+]

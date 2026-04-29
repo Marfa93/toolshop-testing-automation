@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import { TestConfig } from "../test.config";
 import { Language } from "../types/language.type";
 
 export class HomePage {
@@ -12,8 +11,7 @@ export class HomePage {
 
   public constructor(page: Page) {
     this.page = page;
-    const config = new TestConfig();
-    this.url = config.appUrl;
+    this.url = "";
     this.toolShopLogo = page.getByTitle("Toolshop");
     this._selectLanguageButton = page.getByLabel("Select language");
     this.displayedProducts = page.locator("a.card");

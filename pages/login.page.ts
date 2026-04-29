@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import { TestConfig } from "../test.config";
 
 export class LoginPage {
   private readonly _emailErrorBlock: Locator;
@@ -13,8 +12,7 @@ export class LoginPage {
 
   public constructor(page: Page) {
     this.page = page;
-    const config = new TestConfig();
-    this.url = `${config.appUrl}/auth/login`;
+    this.url = `/auth/login`;
 
     this.emailField = page.locator("input#email");
     this.passwordField = page.locator("input#password");
