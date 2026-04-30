@@ -136,7 +136,9 @@ export class RegistrationPage {
     await this.fillFirstName(data.first_name ?? "");
     await this.fillLastName(data.last_name ?? "");
     await this.fillDateOfBirth(data.date_of_birth ?? "");
-    await this.selectCountry(data.country ?? "");
+    if (data.country && data.country !== "") {
+      await this.selectCountry(data.country);
+    }
     await this.fillPostalCode(data.postal_code ?? "");
     await this.fillHouseNumber(data.house_number ?? "");
     await this.fillStreet(data.street ?? "");
@@ -153,6 +155,7 @@ export class RegistrationPage {
   async submit() {
     await this.submitButton.click();
     await this.page.waitForLoadState("networkidle");
+    await this.expectValidationError("registration_error").catch(() => false);
   }
 
   /**
@@ -271,7 +274,7 @@ export class RegistrationPage {
       registration_error: this.registrationError,
     }[field];
 
-    await expect(errorLocator).toBeVisible();
+    await expect(errorLocator).toBeVisible({ timeout: 2000 });
   }
 
   async expectNoValidationErrors() {
