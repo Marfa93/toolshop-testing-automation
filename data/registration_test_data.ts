@@ -1,10 +1,8 @@
 import { faker } from "@faker-js/faker";
 import { DateTime } from "luxon";
 
-import { RegistrationDataSet } from "../types/registrationData.type";
 import { makeUniqueEmail } from "../utils/makeUniqueEmail";
-
-let _cachedData: ReadonlyArray<RegistrationDataSet> | null = null;
+import { RegistrationDataSet } from "../types/registrationData.type";
 
 const dateFormat = "yyyy-MM-dd";
 
@@ -62,7 +60,7 @@ const futureDateOfBirth = DateTime.fromJSDate(
  * Tous les utilisateurs sont basés en France
  * Critère d'acceptation : Age must be between 18 and 75 inclusive
  */
-const generateDataSet = (): ReadonlyArray<RegistrationDataSet> => [
+export const registrationTestData: ReadonlyArray<RegistrationDataSet> = [
   // ============================================================================
   // ✅ CAS NOMINAUX - Enregistrements valides
   // ============================================================================
@@ -1051,6 +1049,3 @@ const generateDataSet = (): ReadonlyArray<RegistrationDataSet> => [
     },
   },
 ];
-
-export const registrationTestData =
-  _cachedData ?? (_cachedData = generateDataSet());

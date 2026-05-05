@@ -154,8 +154,6 @@ export class RegistrationPage {
    */
   async submit() {
     await this.submitButton.click();
-    await this.page.waitForLoadState("networkidle");
-    await this.expectValidationError("registration_error").catch(() => false);
   }
 
   /**
